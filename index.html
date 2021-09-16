@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link rel="stylesheet" href="css/style.css">	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="alerta/alertify.min.css"> --> <!-- estilos de alertify -->
+	<title> tarea-bootstrap-justino </title>
+</head>
+<body class="color-fondo">
+	<div class="container">
+        <div class="row mt-3 justify-content-center">
+            <div class="col-10">
+                <div class="card border-primary mb-3">
+                    <form action="" class="needs-validation" onsubmit="return validarDatos(this)"  novalidate>
+                        <div class="card-header bg-primary text-white text-center">
+                            <h3>Libro Virtual de Reclamaciones</h3>
+                        </div>
+                        <div class="card-body">							
+							<div class="row justify-content-center">
+								<div class="col-md-4 col-sm-6 col-xs-12 text-center">
+									<img src="http://hospitalmoquegua.gob.pe/libro/img/hrm_logo.jpg" alt="">
+								</div>
+								<div class="col-md-4 col-sm-6 col-xs-12 text-center">
+									<img src="http://hospitalmoquegua.gob.pe/libro/img/logo_ms_sin_fondo.png" alt="">
+								</div>
+								<div class="col-md-4 col-sm-6 col-xs-12 text-center">
+									<img src="http://hospitalmoquegua.gob.pe/libro/img/logo_susalud_sin_fondo.png" alt="">
+								</div>
+							</div>
+							<hr class="bg-dark mt-3 mb-1" />
+							<h5 class="mt-0 text-center">Hospital Regional de Moquegua │ RUC: 20532658986 │ Av. Simón Bolivar S/N</h5>
+							<hr class="bg-dark mt-1 mb-3" />
+							
+							<div class="form-group row">								
+								<div class="col-lg-3 col-md-6 col-sm-12 te">
+									<div style="background-color: #e8e8e8;" class="form-control text-center"><script>
+										var f = new Date();
+										document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+										</script></div>	
+								</div>	             
+							</div>
+							<hr class="bg-dark mb-1" />
+							<div class=" border rounded-lg">
+								<div class="alert alert-dark">
+									<strong>1. IDENTIFICACION DEL USUARIO O TERCERO LEGITIMADO (RECLAMANTE)</strong>
+								</div>								
+								
+								<div class="panel">
+									<div class="form-group mt-3">
+										<label><b>Tipo de Reclamante:</b></label>
+										<select class="form-control" required>
+											<option value="" disabled selected>- Seleccione -</option>
+											<option value="1">-Paciente</option>
+											<option value="2">-Representante</option>
+										</select>
+										<div class="invalid-feedback">
+											Falta seleccionar Tipo de Reclamante
+										</div>
+									</div>
+												
+									<label><strong>Paciente (Usuario Afectado)</strong></label>
+									<div class="row">
+										<div class="form-group col-md-6 col-sm-12">
+											<label>Tipo de Documento</label>
+											<select name="tipo_documento" id="tipo_documento" class="form-control" required>
+												<option value="" disabled selected>- Seleccione -</option>
+												<option value="DNI">-DNI</option>
+												<option value="PASAPORTE">-Pasaporte</option>
+												<option value="RUC">-RUC</option>
+												<option value="CARNET">-Carnet de Extranjeria</option>
+											</select>
+											<div class="invalid-feedback">
+												Falta seleccionar Tipo de Documento
+											</div>
+										</div>
+										<div class="form-group col-md-6 col-sm-12">
+											<label for="nrodoc">Nº de Documento</label>
+											<input type="text" class="form-control" name="nrodoc" id="tnum" placeholder="Nº de Documento" maxlength="8" data-fv-numeric="true" required >
+											<div class="valid-feedback">
+												Correcto
+											  </div>
+											<div class="invalid-feedback">
+												Falta Ingresar Nº de Documento
+											</div>
+										</div>
+									
+									</div>								
+									<div class="row">
+										<div class="form-group mt-2 col-md-6 col-sm-12">
+											<label>Nombres</label>
+											<input type="text" class="form-control"  placeholder="Nombres" required>
+											<div class="invalid-feedback">
+												Falta Ingresar Nombres
+											</div>
+										</div>
+										
+										<div class="form-group mt-2 col-md-6 col-sm-12">
+											<label for="apepac">Apellidos</label>
+											<input type="text" class="form-control" placeholder="Apellidos" required>
+											<div class="invalid-feedback">
+												Falta Ingresar Apellidos
+											</div>
+										</div>
+									</div>
+							
+									<div class="form-group mt-2">
+										<label for="domicilio">Datos Domiciliarios</label>
+										<input type="text" class="form-control" placeholder="Dirección" required>
+										<div class="invalid-feedback">
+											Falta Ingresar Dirección
+										</div>
+									</div>
+									<div class="form-group mt-2">											
+										<input type="text" class="form-control" placeholder="Distrito, Provincia, Región / País (en caso de ser extrangero)" required>
+										<div class="invalid-feedback">
+											Falta Ingresar Ubicación
+										</div>
+									</div>									
+									<div class="row">
+										<div class="form-group mt-2 col-md-6 col-sm-12">
+											<label for="correo">Correo Electrónico</label>
+											<input type="email" class="form-control" placeholder="Correo Electrónico" required>
+											<div class="invalid-feedback">
+												Falta Ingresar Correo Electrónico
+											</div>
+										</div>
+										
+										<div class="form-group mt-2 col-md-6 col-sm-12">
+											<label for="telefono">Teléfono</label>
+											<input type="tel" class="form-control" placeholder="Telefono" required>
+											<div class="invalid-feedback">
+												Falta Ingresar N° de Celular			
+											</div>
+										</div>
+									</div>									
+								</div>
+							</div>
+							<div class="border rounded-lg mt-1">
+								<div class="alert alert-dark">
+									<strong>2. DETALLES DE RECLAMO</strong>
+								</div>
+								<div class="panel">
+									<div class="row mt-3">
+										<div class="form-group mt-2 col-md-6 col-sm-12">
+											<label >Area</label>
+											<select class="form-control" required>
+												<option value="" disabled selected>- Seleccione -</option>
+												<option value='1'>-Emergencia</option>
+												<option value='2'>-Hospitalizacion</option>	
+												<option value="3">-Farmacia</option>
+												<option value="4">-Consultas</option>	</select>
+												<div class="invalid-feedback">
+													Falta seleccionar Area
+												</div>
+										</div>
+										<div class="form-group mt-2 col-md-6 col-sm-12">
+											<label for="servicio">Servicio</label>
+											<select name="servicio" id="servicio" class="form-control" required>
+												<option value="" disabled selected>- Seleccione -</option>
+												<option value="1">-Analisis de laboratorio</option>
+												<option value="2">-Medicina General</option>
+												<option value="3">-Neurologia</option>
+												<option value="4">-Dermatologia</option>	</select>
+												<div class="invalid-feedback">
+													Falta seleccionar Servicio
+												</div>
+										</div>
+									</div>
+									<div class="form-group mt-2">
+										<label>Reclamo del Usuario afectado (reclamante)</label>
+										<textarea  rows="6" class="form-control" placeholder="Reclamo del Usuario afectado (reclamante):" required></textarea>
+										<div class="invalid-feedback">
+											Falta Ingresar Descripción del Reclamo
+										</div>
+									</div>
+									<div class="form-group mt-2">	
+																				
+										<input type="file" class="form-control bg-light" name="nomfile" id="nomfile" required>
+
+									</div>
+								</div>
+							</div>
+							<div class="border rounded-lg mt-1">
+								<div class="alert alert-dark">
+									<strong>3. ESTOY DE ACUERDO CON LO INGRESADO EN ESTA HOJA DE RECLAMACIONES Y ASÍ MISMO CONFIRMO QUE LOS DATOS SON TOMADOS COMO FIRMA DE ESTA SOLICITUD</strong>
+								</div>
+								<div class="panel">
+									<div class="form-group mt-3">
+										<label>Autorizo Notificación del Resultado al email consignado:</label>
+										<div class="form-check " >
+
+											<div class="custom-control custom-radio custom-control-inline">
+												<input type="radio" class="custom-control-input"  id="autorizosi" name="autorizo" value="0" required >
+												<label class="custom-control-label" for="autorizosi">Si</label>
+											</div>
+
+											<div class="custom-control custom-radio custom-control-inline">
+												<input type="radio" class="custom-control-input"  id="autorizono" name="autorizo" value="1">
+												<label class="custom-control-label" for="autorizono">No</label>
+										  	</div>
+										</div>
+									</div>
+									
+								
+								</div>
+							</div>
+							<!-- bontones  -->    
+						<div class="card-footer">
+							<div class="col-md-12 text-center">
+								<button type="submit" class="btn btn-primary">Enviar Formulario</button>
+								<!-- <button type="button" class="btn btn-warning">Cancel</button> -->
+							</div>						
+                        </div> 						    						         
+					</form>		
+                </div>
+            </div>
+        </div>
+	</div>  
+		<script src="javascript/camposvacio.js"></script> <!-- script donde desabilita campos vacios -->		
+		<script src="javascript/validartdatos.js"></script> <!-- script donde valida los tipos de dato -->
+		<!-- <script src="javascript/jquery.min.js"></script> 
+		<script src="alerta/alertify.min.js"></script> --> <!-- scrip de alertify -->
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> <!-- link de sweet alert  para las alertas -->
+</body>
+</html>
+  
+
+
